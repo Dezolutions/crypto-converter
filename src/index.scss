@@ -1,0 +1,166 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+ul,
+li,
+a,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+  padding: 0;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 5% 2fr 1fr 5%;
+  grid-template-rows: 100px 200px;
+  grid-gap: 1rem;
+}
+
+
+
+.app-header {
+  grid-area: header;
+  padding-top: 20px;
+  text-align: center;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 1;
+}
+
+.crypto-table {
+  grid-area: cryp-table;
+  border-radius: 20px;
+  box-shadow: 0px 0px 13px 3px rgba(0, 0, 0, 0.1);
+  grid-row-start: 2;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.field-names {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  color: #c1c1c1;
+  border-bottom: 1px solid #e9e9e9;
+  p {
+    padding: 20px;
+  }
+  img {
+    width: 30px;
+    align-self: center;
+    justify-self: center;
+  }
+}
+
+.crypto-converter {
+  grid-area: converter;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0px 0px 13px 3px rgba(0, 0, 0, 0.1);
+  &__block {
+    display: grid;
+    align-self: center;
+    justify-self: center;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  }
+}
+
+.converter__item,
+.converter__output {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  margin: 10px 0;
+  text-align: center;
+}
+.converter__output {
+  color: #c1c1c1;
+  font-size: 20px;
+  text-align: center;
+}
+
+.converter__input,
+.converter__select,
+.converter__currency {
+  border: none;
+  border-bottom: 1px solid #c1c1c1;
+  margin-right: 10px;
+  padding: 5px;
+  outline: none;
+}
+
+.converter__input {
+  width: 70%;
+}
+.converter__select {
+  margin-right: 0;
+  
+}
+.converter__currency {
+  width: 60px;
+  text-align: center;
+  margin: 0 auto;
+  cursor: default;
+}
+
+.crypto-item {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  
+  padding: 10px 0;
+  border-bottom: 1px solid #e9e9e9;
+  cursor: pointer;
+  transition: .2s ease;
+  &:hover{
+    background-color: rgb(227, 254, 255);
+  }
+  p {
+    padding: 20px;
+  }
+}
+
+.crypto-img {
+  width: 40px;
+  border-radius: 50%;
+  justify-self: center;
+  align-self: center;
+}
+
+.priceDown {
+  background-color: rgb(250, 188, 188);
+}
+
+.priceUp{
+  background-color: rgb(172, 253, 172);
+}
+
+
+@media screen and (max-width:1000px){
+  .app{
+    grid-template-columns: 5% 1fr 5%;
+  }
+  .crypto-converter{
+    grid-row-start: 2;
+    grid-column-start: 2;
+    grid-column-end: 2;
+  }
+  .crypto-table{
+    grid-row-start: 3;
+    grid-column-start: 2;
+  }
+}
